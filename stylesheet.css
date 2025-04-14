@@ -1,0 +1,256 @@
+:root{
+    --original-colour:rgb(77 121 139);
+    --zoom-colour:rgb(54 87 101);
+    --font:
+}
+@font-face{
+    font-family: "MyFont";
+    src:url('明禅刻本.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.no-underline {
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+    background-image: url('background.png');
+}
+body {
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "top-left top-right"
+                         "middle middle"
+                         "bottom bottom";
+    grid-template-rows: auto auto auto;
+    margin: 0;
+    width: 100%;
+}
+.header-nav-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "top-left top-right";
+    width: 100%;
+    background-color: var(--original-colour);
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+}
+header{
+    grid-area: top-left;
+    background-color: var(--original-colour);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font-family: "MyFont", serif;
+}
+h2, h3, .title, .poem {
+    text-align: center;
+}
+.wrap {
+    float: left; 
+}
+.warp img {
+    max-width: 100%;
+}
+.big1 {
+    font-size: 1.8rem;
+}
+.big2{
+    font-size: 1.5rem;
+}
+.color>a{
+    color:#1e3b7a;
+}
+nav{
+    grid-area: top-right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--original-colour);
+}
+main {
+    grid-area: middle;
+    padding: 1rem;
+    width: 80%;
+    margin: 0 auto;
+}
+main ul.toc {
+    columns: 2; 
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    column-gap: 2rem; 
+    padding-left: 2rem;
+    margin: 1rem 0;
+}  
+main li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    min-height: 1.5rem;
+}
+main li > ul, main li > ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+main ul {
+    list-style-type: disc;
+}
+main ul ul {
+    list-style-type: circle;
+}
+main ul ul ul {
+    list-style-type: square;
+}
+footer {
+    grid-area: bottom;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    padding: 1em;
+    
+    font-family: "MyFont", serif;
+}
+li a{
+    display: inline-block;
+    font-family: "MyFont", serif;
+    text-decoration: none;
+    color: black;
+}
+nav a:visited{
+    color: white;
+}
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centers text inside the figcaption */
+    width: 100%; /* Ensures the figure spans the full width */
+}
+figure img {
+    max-width: 100%; /* Ensures responsiveness */
+    height: auto;
+}
+.image-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    float: left;
+}
+.img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: opacity 2s ease;
+}
+.img-hover {
+    opacity: 0;
+}
+.image-container:hover .img-hover {
+    opacity: 1;
+}
+.image-container:hover .img-original {
+    opacity: 0;
+}
+@media (hover:hover){
+    nav a:hover{
+    background-color: var(--zoom-colour);
+    transform: scale(1.5);
+    }
+    figure img:hover{
+        transform: scale(1.5);
+    }
+}
+.swiper {
+    margin: 100px auto;
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; 
+    display: block;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: white; 
+    background-color: #999999; 
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    box-shadow: none;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 16px;
+    font-weight: normal;
+    color: white; 
+}
+.end {
+    text-align: right;
+}
+.annotated {
+    position: relative;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #15559a ;
+}
+.annotated::after {
+    content: attr(data-annotation);
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    width: 200px;
+    white-space: normal;
+    text-align: center;
+}
+.annotated:hover::after {
+    opacity: 1;
+}
+summary {
+    color: red;
+}
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+td,th {
+    border: 1px solid black;
+}
+@viewport{
+    width:device-width;
+}
