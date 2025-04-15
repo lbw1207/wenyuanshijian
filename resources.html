@@ -5,8 +5,10 @@
         <title>文缘史鉴</title>
         <link rel="stylesheet" href="stylesheet.css"/>
         <meta name="viewport" content="initial-scale=1.0,width=device-width"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
         <link rel="icon" href="favicon/favicon.ico" />
     </head>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <body>
         <div class="header-nav-container">
             <header>
@@ -45,11 +47,35 @@
                 <h4>（二）教案编写</h4>
                 <a href="教案.docx" download>点击下载教案</a>
                 <h4>（三）学生优秀作业展示</h4>
-                <figure>
-                    <img src="homework1.png" alt=""/>
-                    <img src="homework2.png" alt=""/>
-                    <img src="homework3.png" alt=""/>
-                </figure>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="1..png" alt="图片1"></div>
+                        <div class="swiper-slide"><img src="2..png" alt="图片2"></div>
+                        <div class="swiper-slide"><img src="3..png" alt="图片3"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            
+                <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+                <script>
+                    const swiper = new Swiper('.swiper', {
+                        loop: true,
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                    });
+                </script>
             </section>
             <hr>
             <section id="documents">
@@ -253,13 +279,13 @@
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;近日，南京师范大学“文缘史鉴”项目团队顺利开展了关于文史融通教学的系列访谈活动。本次访谈活动旨在探讨如何在中学语文教学中有效融合文学与历史，从而提升学生的人文素养和学习兴趣。受访者包括苏州中学语文特级教师张兰芳和南京师范大学文学院讲师陶慧，两位专家分享她们在文史融通教学中的实践经验和独到见解。</p>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;有着三十余年一线教学经验的张兰芳老师表示，情境教学理念在古代文学的教学中十分重要，<b>只有对历史文化情境给予了充分的关注，教师才能去用现实情境来和学生的生活相连接</b>。在苏州中学语文教学的多年探索中，教研组逐渐摸索出了<b>与文本内核相关联、与阅读主体相契合、从“个文本”拓展到“互文本”</b>三大构建历史文化情境的策略。张老师强调：“我们在教学中不断探索文本的深层意义，并结合学生的实际需求，力求找到一个历史与文化情境相结合的切入点，以激发学生对传统文学的兴趣。”</p>
                 <figure>
-                    <figcaption>（张兰芳，正高级语文教师，江苏省优秀教育工作者，苏州市名教师，现任苏州中学高三年级语文备课组长，苏州大学文学院研究生导师）</figcaption>
-                    <img src="zhanglanfang.jpg" alt=""/>
+                    <figcaption>（张兰芳，正高级语文教师，江苏省优秀教育工作者，苏州市名教师，苏州大学文学院研究生导师）</figcaption>
+                    <img src="张兰芳老师.jpg" alt=""/>
                 </figure>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;主攻唐宋文学研究的陶慧博士同样对文史融通有着深刻的理解。她结合自身的研究经验，指出<b>宋代士人大都是集官僚、文士、学者三位于一身的复合型人才</b>，其知识淹博，格局宏大，<b>如果将文学与历史结合，可以帮助学生更好地理解许多宋代文学作品的深层含义</b>。陶博士认为：“<b>文学和历史素养不必分开来谈，应该说是一个综合性的文化素养</b>。人之所以为人，在于能思考，有判断，有感情，如果仅仅只是局限在自己的专业领域，习得相关的技能和知识，则有自我工具化的风险。”</p>
                 <figure>
                     <figcaption>（陶慧，南京大学古代文学博士，师从唐宋文学著名学者莫砺锋先生，现任南京师范大学文学院讲师）</figcaption>
-                    <img src="taohui.jpg" alt=""/>
+                    <img src="陶慧老师.jpg" alt=""/>
                 </figure>
                 <p>此外，两位专家还就教师在实施文史融通教学时应具备的能力和素养进行了探讨。张兰芳老师强调，教师需要具备广泛的阅读能力和跨学科的视野，同时还要对学生给予高度的关注，<b>以学生当下的媒介接触为切入点，勾连起文本挖掘与学生广阔的现实生活</b>。</p>
                 <figure>
