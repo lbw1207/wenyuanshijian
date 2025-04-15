@@ -168,7 +168,7 @@ figure img {
     background-color: var(--zoom-colour);
     transform: scale(1.5);
     }
-    figure img:hover{
+    .zoom img:hover{
         transform: scale(1.5);
     }
 }
