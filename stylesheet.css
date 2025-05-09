@@ -145,6 +145,7 @@ figure img {
     height: 300px;
     overflow: hidden;
     float: left;
+    cursor: pointer; /* Indicates interactivity */
 }
 .img {
     position: absolute;
@@ -157,18 +158,22 @@ figure img {
 .img-hover {
     opacity: 0;
 }
-.image-container:hover .img-hover {
+.image-container:hover .img-hover, 
+.image-container.active .img-hover{
     opacity: 1;
 }
-.image-container:hover .img-original {
+.image-container:hover .img-original,
+.image-container.active .img-original {
     opacity: 0;
 }
 @media (hover:hover){
-    nav a:hover{
+    nav a:hover,
+    nav a:active{
     background-color: var(--zoom-colour);
     transform: scale(1.5);
     }
-    .zoom img:hover{
+    .zoom img:hover,
+    .zoom img:active{
         transform: scale(1.5);
     }
 }
@@ -235,8 +240,10 @@ figure img {
     width: 200px;
     white-space: normal;
     text-align: center;
+    z-index: 20;
 }
-.annotated:hover::after {
+.annotated:hover::after, 
+.annotated.active::after{
     opacity: 1;
 }
 summary {

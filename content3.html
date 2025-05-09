@@ -6,6 +6,19 @@
         <link rel="stylesheet" href="stylesheet.css"/>
         <meta name="viewport" content="initial-scale=1.0,width=device-width"/>
         <link rel="icon" href="favicon/favicon.ico" />
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll('.interactive').forEach(el => {
+                    el.addEventListener('click', function () {
+                        // Optionally remove active from others
+                        document.querySelectorAll('.interactive').forEach(other => {
+                            if (other !== el) other.classList.remove('active');
+                        });
+                        el.classList.toggle('active');
+                    });
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="header-nav-container">

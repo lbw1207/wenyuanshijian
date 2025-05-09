@@ -6,6 +6,19 @@
         <link rel="stylesheet" href="stylesheet.css"/>
         <meta name="viewport" content="initial-scale=1.0,width=device-width"/>
         <link rel="icon" href="favicon/favicon.ico" />
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll('.interactive').forEach(el => {
+                    el.addEventListener('click', function () {
+                        // Optionally remove active from others
+                        document.querySelectorAll('.interactive').forEach(other => {
+                            if (other !== el) other.classList.remove('active');
+                        });
+                        el.classList.toggle('active');
+                    });
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="header-nav-container">
@@ -212,7 +225,7 @@
                             <hr>
                             <h4>陆游</h4>
                                 <p>
-                                    <div class="image-container">
+                                    <div class="image-container interactive">
                                         <img class="img img-original" src="陆游.jpg" alt=""/>
                                         <img class="img img-hover" src="陆游 AI.jpg" alt=""/>
                                     </div>
@@ -251,7 +264,7 @@
                             <hr>
                             <h3>辛弃疾</h3>
                             <p>
-                                <div class="image-container">
+                                <div class="image-container interactive">
                                     <img class="img img-original" src="辛弃疾.jpg" alt=""/>
                                     <img class="img img-hover" src="辛弃疾 AI.bmp" alt=""/>
                                 </div>
@@ -334,7 +347,7 @@
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;南宋时期，由于朝廷的懦弱，国家陷入无尽的动荡与战乱之中。北方金人不断南侵，南宋朝廷则疲于奔命，无力抵抗。在这场漫长的战争中，无数人民流离失所，家破人亡。他们的苦难与泪水，汇聚成一首首悲壮的史诗。在这样的背景下，许多文人墨客在诗词中抒发对国家命运的忧虑和对人民疾苦的同情，字字句句都透露出深深的哀愁与无奈。</p>
                             <h3>李清照</h3>
                             <p>
-                                <div class="image-container">
+                                <div class="image-container interactive">
                                     <img class="img img-original" src="李清照.bmp" alt=""/>
                                     <img class="img img-hover" src="李清照 AI.bmp" alt=""/>
                                 </div>

@@ -6,6 +6,19 @@
         <link rel="stylesheet" href="stylesheet.css"/>
         <meta name="viewport" content="initial-scale=1.0,width=device-width"/>
         <link rel="icon" href="favicon/favicon.ico" />
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll('.interactive').forEach(el => {
+                    el.addEventListener('click', function () {
+                        // Optionally remove active from others
+                        document.querySelectorAll('.interactive').forEach(other => {
+                            if (other !== el) other.classList.remove('active');
+                        });
+                        el.classList.toggle('active');
+                    });
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="header-nav-container">
@@ -133,7 +146,7 @@
                     <section id="t4">
                         <h4>欧阳修</h4>
                         <p>
-                            <div class="image-container">
+                            <div class="image-container interactive">
                                 <img class="img img-original" src="欧阳修.jpeg" alt=""/>
                                 <img class="img img-hover" src="欧阳修 AI.jpg" alt=""/>
                             </div>
@@ -185,7 +198,7 @@
                     <h3>第二节 新法旧义，文坛激辩</h3>
                     <h4>一、王安石：“三代以下唯一完人”？</h4>
                     <p>
-                        <div class="image-container">
+                        <div class="image-container interactive">
                             <img class="img img-original" src="王安石.bmp" alt=""/>
                             <img class="img img-hover" src="王安石 AI.bmp" alt=""/>
                         </div>
@@ -217,7 +230,7 @@
                     </section>
                     <hr>
                     <section id="t8">
-                        <div class="image-container">
+                        <div class="image-container interactive">
                             <img class="img img-original" src="宋仁宗.jpeg" alt=""/>
                             <img class="img img-hover" src="宋仁宗 AI.jpg" alt=""/>
                         </div>
@@ -293,7 +306,7 @@
                     <hr>
                     <h4>三、苏轼：裹挟于新旧党争中的数起数落</h4>
                     <p>
-                        <div class="image-container">
+                        <div class="image-container interactive">
                             <img class="img img-original" src="苏轼.bmp" alt="苏轼"/>
                             <img class="img img-hover" src="苏轼 AI.bmp" alt="苏轼"/>
                         </div>
